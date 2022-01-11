@@ -25,7 +25,7 @@ func (e Err) Error() string {
 }
 
 func (e Err) Is(target error) bool {
-	return target == pkg.InternalErr
+	return target == pkg.ErrInternal
 }
 
 func (i Service) GetCustomer(ctx context.Context, failService, failDatabase bool) error {

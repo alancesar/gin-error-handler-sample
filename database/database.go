@@ -20,7 +20,7 @@ func (e Err) Error() string {
 }
 
 func (e Err) Is(target error) bool {
-	return target == pkg.InternalErr
+	return target == pkg.ErrInternal
 }
 
 func (d Database) GetCustomer(_ context.Context, fail bool) error {

@@ -14,10 +14,10 @@ func ErrorHandlerMiddleware() gin.HandlerFunc {
 		c.Next()
 
 		if err := c.Errors.Last(); err != nil {
-			// service.Err and database.Err implement Is(target error) bool returning true for pkg.InternalErr
+			// service.Err and database.Err implement Is(target error) bool returning true for pkg.ErrInternal
 			// so errors.Is return true for them
 			// https://pkg.go.dev/errors#Is
-			if errors.Is(err.Err, pkg.InternalErr) {
+			if errors.Is(err.Err, pkg.ErrInternal) {
 				log.Printf("internal server error: %s", err.Error())
 
 				// Handle with specific error

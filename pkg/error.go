@@ -4,4 +4,4 @@ import (
 	"errors"
 )
 
-var InternalErr = errors.New("internal error")
+var ErrInternal = errors.New("internal error")
